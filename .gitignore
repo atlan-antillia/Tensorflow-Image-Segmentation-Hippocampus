@@ -4,7 +4,8 @@ __pycache__/
 *$py.class
 
 # 2024/01/29
-dataset/
+dataset/Hippocampus/train/
+dataset/Hippocampus/valid/
 projects/*/*/models/
 
 # C extensions
