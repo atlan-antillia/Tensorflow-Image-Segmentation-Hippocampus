@@ -214,7 +214,7 @@ test/images/10088_HFH_010.jpg<br>
 
 </td>
 <td>
-Inferred test_output_merged/10088_HFH_010.jpg<br>
+Inferred merged/10088_HFH_010.jpg<br>
 <img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/test_output_merged/10088_HFH_010.jpg" width="512" height="auto">
 </td> 
 </tr>
@@ -226,7 +226,7 @@ test/images/10100_HFH_007.jpg<br>
 
 </td>
 <td>
-Inferred test_output_merged/10100_HFH_007.jpg<br>
+Inferred merged/10100_HFH_007.jpg<br>
 <img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/test_output_merged/10100_HFH_007.jpg" width="512" height="auto">
 </td> 
 </tr>
@@ -239,7 +239,7 @@ test/images/10098_HFH_014.jpg<br>
 
 </td>
 <td>
-Inferred test_output_merged/10098_HFH_014.jpg<br>
+Inferred merged/10098_HFH_014.jpg<br>
 <img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/test_output_merged/10098_HFH_014.jpg" width="512" height="auto">
 </td> 
 </tr>
