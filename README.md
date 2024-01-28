@@ -255,3 +255,10 @@ Appl. Sci. 2023, 13(13), 7921; https://doi.org/10.3390/app13137921<br>
 <pre>
 https://www.mdpi.com/2076-3417/13/13/7921
 </pre>
+
+<b>2. Hippocampus Segmentation Using U-Net Convolutional Network from Brain Magnetic Resonance Imaging (MRI)</b><br>
+Ruhul Amin Hazarika, Arnab Kumar Maji, Raplang Syiem, Samarendra Nath Sur, Debdatta Kandar<br>
+PMID: 35304675 PMCID: PMC9485390 DOI: 10.1007/s10278-022-00613-y<br>
+<pre>
+https://pubmed.ncbi.nlm.nih.gov/35304675/
+</pre>
