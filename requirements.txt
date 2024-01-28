@@ -97,7 +97,7 @@ toml==0.10.2
 tqdm==4.64.0
 typeguard==2.13.3
 typing_extensions==4.2.0
-urllib3==1.26.17
+urllib3==1.26.18
 w3lib==2.0.1
 websockets==10.4
 Werkzeug==2.2.3
