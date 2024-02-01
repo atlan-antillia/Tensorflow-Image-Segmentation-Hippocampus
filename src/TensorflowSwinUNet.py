@@ -141,7 +141,7 @@ class TensorflowSwinUNet(TensorflowUNet) :
          beta_1=0.9, 
          beta_2=0.999, 
          #epsilon=None,        #2023/11/10 epsion=None is not allowed
-         weight_decay=0.0,     #2023/11/10 decay -> weight_decay
+         #weight_decay=0.0,     #2023/11/10 decay -> weight_decay
          clipvalue=clipvalue,  #2023/06/26
          amsgrad=False)
       print("=== Optimizer Adam learning_rate {} clipvalue {} ".format(learning_rate, clipvalue))

@@ -1,11 +1,19 @@
-<h2>Tensorflow-Image-Segmentation-Hippocampus (2024/01/29)</h2>
+<h2>Tensorflow-Image-Segmentation-Hippocampus (Updated: 2024/02/01)</h2>
 
 This is an experimental Image Segmentation project for Hippocampus based on
 the <a href="https://github.com/sarah-antillia/Tensorflow-Image-Segmentation-API">Tensorflow-Image-Segmentation-API</a>.
 <br>
 As a first trial, we use the simple UNet Model 
 <a href="./src/TensorflowUNet.py">TensorflowSlightlyFlexibleUNet</a> for this Hippocampus Segmentation.<br>
+As shown in <a href="https://github.com/sarah-antillia/Tensorflow-Image-Segmentation-API">Tensorflow-Image-Segmentation-API</a>.
+you may try other Tensorflow UNet Models:<br>
 
+<li><a href="./src/TensorflowSwinUNet.py">TensorflowSwinUNet.py</a></li>
+<li><a href="./src/TensorflowMultiResUNet.py">TensorflowMultiResUNet.py</a></li>
+<li><a href="./src/TensorflowAttentionUNet.py">TensorflowAttentionUNet.py</a></li>
+<li><a href="./src/TensorflowEfficientUNet.py">TensorflowEfficientUNet.py</a></li>
+<li><a href="./src/TensorflowUNet3Plus.py">TensorflowUNet3Plus.py</a></li>
+<br>
 
 <h3>1. Dataset Citation</h3>
 
@@ -91,6 +99,11 @@ Please expand the downloaded ImageMaskDataset and place them under <b>./dataset<
         └─masks
 </pre>
  
+ 
+<b>Hippocampus Dataset Statistics</b><br>
+<img src ="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/Hippocampus_Statistics.png" width="512" height="auto"><br>
+
+<br>
 
 <h3>
 <a id="3">

@@ -79,6 +79,7 @@ import sys
 import datetime
 
 os.environ["TF_FORCE_GPU_ALLOW_GROWTH"] = "true"
+
 # 2023/10/20 "false" -> "true"
 os.environ["TF_ENABLE_GPU_GARBAGE_COLLECTION"]="true"
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -86,12 +87,14 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 # 2023/10/13: Added the following lines.
 SEED = 137
 os.environ['PYTHONHASHSEED']         = "0"
-os.environ['TF_DETERMINISTIC_OPS']   = '1'
+
+#os.environ['TF_DETERMINISTIC_OPS']   = '1'
 #os.environ['TF_CUDNN_DETERMINISTIC'] = '1'
 #os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
 
 print("=== os.environ['PYTHONHASHSEED']         {}".format(os.environ['PYTHONHASHSEED']))
-print("=== os.environ['TF_DETERMINISTIC_OPS']   {}".format(os.environ['TF_DETERMINISTIC_OPS']))
+# 2024/01/29
+#print("=== os.environ['TF_DETERMINISTIC_OPS']   {}".format(os.environ['TF_DETERMINISTIC_OPS']))
 #print("=== os.environ['TF_CUDNN_DETERMINISTIC'] {}".format(os.environ['TF_CUDNN_DETERMINISTIC']))
 
 import shutil
