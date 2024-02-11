@@ -24,7 +24,7 @@ google-auth-oauthlib==0.4.6
 google-pasta==0.2.0
 googleapis-common-protos==1.60.0
 graphviz==0.20.1
-grpcio==1.53.0
+grpcio==1.53.2
 h5py==3.7.0
 idna==3.3
 imageio==2.28.1
