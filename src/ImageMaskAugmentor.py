@@ -19,6 +19,7 @@
 # 2023/08/26 Added shrink method to augment images and masks.
 # 2023/08/27 Added shear method to augment images and masks.
 # 2023/08/28 Added elastic_transorm method to augment images and masks.
+# 2024/02/12 Modified shear method to check self.hflip and self.vflip flags
 
 import os
 import sys
@@ -48,6 +49,8 @@ class ImageMaskAugmentor:
 
     self.hflip    = self.config.get(AUGMENTOR, "hflip", dvalue=True)
     self.vflip    = self.config.get(AUGMENTOR, "vflip", dvalue=True)
+    #print("---self.hflip {}".format(self.hflip))
+    #input("----")
     self.transformer = self.config.get(AUGMENTOR, "transformer", dvalue=False)
     self.alpha    = self.config.get(AUGMENTOR, "alpah", dvalue=1300)
     self.sigmoid  = self.config.get(AUGMENTOR, "sigmoid", dvalue=8)
@@ -197,6 +200,9 @@ class ImageMaskAugmentor:
   # 2023/08/27 Added shear method to augment images and masks.
   # This method has been taken from the following code in stackoverflow.
   # https://stackoverflow.com/questions/57881430/how-could-i-implement-a-centered-shear-an-image-with-opencv
+  
+  # 2024/02/12 Modified to check self.hflip and self.vflip flags
+
   def shear(self, IMAGES, MASKS, image, mask,
                  generated_images_dir, image_basename,
                  generated_masks_dir,  mask_basename ):
@@ -220,23 +226,25 @@ class ImageMaskAugmentor:
 
       MASKS.append(sheared_mask)
 
-      hflipped_image  = self.horizontal_flip(sheared_image)
-      hflipped_mask   = self.horizontal_flip(sheared_mask)
+      # 2024/02/12
+      if self.hflip:
+        hflipped_image  = self.horizontal_flip(sheared_image)
+        hflipped_mask   = self.horizontal_flip(sheared_mask)
 
-      IMAGES.append(hflipped_image)
-      MASKS.append(hflipped_mask)
+        IMAGES.append(hflipped_image)
+        MASKS.append(hflipped_mask)
+      if self.vflip:
+        vflipped_image  = self.vertical_flip(sheared_image)
+        vflipped_mask   = self.vertical_flip(sheared_mask)
 
-      vflipped_image  = self.vertical_flip(sheared_image)
-      vflipped_mask   = self.vertical_flip(sheared_mask)
+        IMAGES.append(vflipped_image)
+        MASKS.append(vflipped_mask)
 
-      IMAGES.append(vflipped_image)
-      MASKS.append(vflipped_mask)
+        hvflipped_image = self.vertical_flip(hflipped_image)
+        hvflipped_mask  = self.vertical_flip(hflipped_mask)
 
-      hvflipped_image = self.vertical_flip(hflipped_image)
-      hvflipped_mask  = self.vertical_flip(hflipped_mask)
-
-      IMAGES.append(hvflipped_image)
-      MASKS.append(hvflipped_mask)
+        IMAGES.append(hvflipped_image)
+        MASKS.append(hvflipped_mask)
 
       if self.debug:
         filepath = os.path.join(generated_images_dir, "sheared_" + ratio + "_" + image_basename)
@@ -245,27 +253,28 @@ class ImageMaskAugmentor:
         filepath = os.path.join(generated_masks_dir,  "sheared_" + ratio + "_" + mask_basename)
         cv2.imwrite(filepath, sheared_mask)
         #print("Saved {}".format(filepath))
+        # 2024/02/12
+        if self.hflip:
+          filepath = os.path.join(generated_images_dir, "hflipped_sheared_" + ratio + "_" + image_basename)
+          cv2.imwrite(filepath, hflipped_image)
+          #print("Saved {}".format(filepath))
+          filepath = os.path.join(generated_masks_dir,  "hflipped_sheared_" + ratio + "_" + mask_basename)
+          cv2.imwrite(filepath, hflipped_mask)
+          #print("Saved {}".format(filepath))
+        if self.vflip:
+          filepath = os.path.join(generated_images_dir, "vflipped_sheared_" + ratio + "_" + image_basename)
+          cv2.imwrite(filepath, vflipped_image)
+          #print("Saved {}".format(filepath))
+          filepath = os.path.join(generated_masks_dir,  "vflipped_sheared_" + ratio + "_" + mask_basename)
+          cv2.imwrite(filepath, vflipped_mask)
+          #print("Saved {}".format(filepath))
 
-        filepath = os.path.join(generated_images_dir, "hflipped_sheared_" + ratio + "_" + image_basename)
-        cv2.imwrite(filepath, hflipped_image)
-        #print("Saved {}".format(filepath))
-        filepath = os.path.join(generated_masks_dir,  "hflipped_sheared_" + ratio + "_" + mask_basename)
-        cv2.imwrite(filepath, hflipped_mask)
-        #print("Saved {}".format(filepath))
-
-        filepath = os.path.join(generated_images_dir, "vflipped_sheared_" + ratio + "_" + image_basename)
-        cv2.imwrite(filepath, vflipped_image)
-        #print("Saved {}".format(filepath))
-        filepath = os.path.join(generated_masks_dir,  "vflipped_sheared_" + ratio + "_" + mask_basename)
-        cv2.imwrite(filepath, vflipped_mask)
-        #print("Saved {}".format(filepath))
-
-        filepath = os.path.join(generated_images_dir, "hvflipped_sheared_" + ratio + "_" + image_basename)
-        cv2.imwrite(filepath, hvflipped_image)
-        #print("Saved {}".format(filepath))
-        filepath = os.path.join(generated_masks_dir,  "hvflipped_sheared_" + ratio + "_" + mask_basename)
-        cv2.imwrite(filepath, hvflipped_mask)
-        #print("Saved {}".format(filepath))
+          filepath = os.path.join(generated_images_dir, "hvflipped_sheared_" + ratio + "_" + image_basename)
+          cv2.imwrite(filepath, hvflipped_image)
+          #print("Saved {}".format(filepath))
+          filepath = os.path.join(generated_masks_dir,  "hvflipped_sheared_" + ratio + "_" + mask_basename)
+          cv2.imwrite(filepath, hvflipped_mask)
+          #print("Saved {}".format(filepath))
 
     
   # This method has been taken from the following code.
