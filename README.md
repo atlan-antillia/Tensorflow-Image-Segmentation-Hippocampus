@@ -33,10 +33,9 @@ you may try other Tensorflow UNet Models:<br>
 The original image dataset used here has been taken from the following kaggle web site.<br>
 <a href="https://www.kaggle.com/datasets/andrewmvd/hippocampus-segmentation-in-mri-images">
 Hippocampus Segmentation in MRI Images</a><br>
-
-<pre>
+<br>
 <b>About Dataset</b>
-
+<pre>
 Introduction
 The hippocampus is a structure within the brain that plays important roles in the 
 consolidation of information from short-term memory to long-term memory, and in spatial 
@@ -46,9 +45,9 @@ being T1 ideal for representing structure.
 The hippocampus has become the focus of research in several neurodegenerative disorders. 
 Automatic segmentation of this structure from magnetic resonance (MR) imaging scans of the 
 brain facilitates this work, especially in resource poor environments.
-<br>
+</pre>
 <b>About This Dataset</b>
-
+<pre>
 This dataset contains T1-weighted MR images of 50 subjects, 40 of whom are patients with 
 temporal lobe epilepsy and 10 are nonepileptic subjects. Hippocampus labels are provided 
 for 25 subjects for training. For more information about the dataset, refer to the 
@@ -94,7 +93,7 @@ url= {https://www.nitrc.org/projects/hippseg_2011/}
  please download the latest dataset from the google drive 
 <a href="https://drive.google.com/file/d/1FAgeAlwvzCscZVvAovqpsTQdum90_7y-/view?usp=sharing">
 Hippocampus-ImageMask-Dataset.zip.</a> (Updated:2024/02/20)
-
+<br>
 Please see also the <a href="https://github.com/atlan-antillia/Hippocampus-Image-Dataset">Hippocampus-Image-Dataset</a>.<br>
 Please expand the downloaded ImageMaskDataset and place them under <b>./dataset</b> folder to be
 
