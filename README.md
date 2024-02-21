@@ -13,7 +13,9 @@ Hippocampus-ImageMask-Dataset.zip</a> (Updated:2024/02/21).
 Hippocampus-ImageMask-Dataset.zip</a> (Updated:2024/02/21).
 </li>
 <br>
-
+<img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/asset/sample_images.png" width="720" height="auto">
+<br>
+<br>
 As a first trial, we use the simple UNet Model 
 <a href="./src/TensorflowUNet.py">TensorflowSlightlyFlexibleUNet</a> for this Hippocampus Segmentation.<br>
 As shown in <a href="https://github.com/sarah-antillia/Tensorflow-Image-Segmentation-API">Tensorflow-Image-Segmentation-API</a>.
