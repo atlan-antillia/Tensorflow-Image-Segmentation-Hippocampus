@@ -135,9 +135,9 @@ from GrayScaleImageWriter import GrayScaleImageWriter
 
 #2023/10/26
 from SeedResetCallback       import SeedResetCallback
-
 from losses import dice_coef, basnet_hybrid_loss, sensitivity, specificity
-from losses import iou_coef, iou_loss, bce_iou_loss, dice_loss
+# 2024/02/22 Added bce_dice_loss
+from losses import iou_coef, iou_loss, bce_iou_loss, dice_loss,  bce_dice_loss
 
 
 gpus = tf.config.list_physical_devices('GPU')

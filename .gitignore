@@ -8,6 +8,9 @@ dataset/Hippocampus/train/
 dataset/Hippocampus/valid/
 projects/*/*/models/
 
+# 2024/02/22
+projects/*/Hippocampus_bce_dice_loss/
+
 # C extensions
 *.so
 

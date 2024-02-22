@@ -17,6 +17,8 @@ Hippocampus-ImageMask-Dataset.zip</a> (Updated:2024/02/21).
 <a href="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/train_eval_infer.config">train_eval_infer.config</a> 
 to be able to colorize the inferred mask regions.
 </li>
+<li>2024/02/22: Updated <a href="./src/TensorflowUNet.py">TensorflowUNet.py</a> to import bce_dice_loss.
+</li>
 <br>
 <img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/asset/sample_images.png" width="720" height="auto">
 <br>
@@ -32,6 +34,7 @@ you may try other Tensorflow UNet Models:<br>
 <li><a href="./src/TensorflowEfficientUNet.py">TensorflowEfficientUNet.py</a></li>
 <li><a href="./src/TensorflowUNet3Plus.py">TensorflowUNet3Plus.py</a></li>
 <br>
+
 
 <h3>1. Dataset Citation</h3>
 
@@ -146,9 +149,7 @@ base_filters   = 16
 num_layers     = 7
 dropout_rate   = 0.08
 learning_rate  = 0.0001
-
 loss           = "bce_iou_loss"
-;loss           = "binary_crossentropy"
 metrics        = ["binary_accuracy"]
 show_summary   = False
 
@@ -157,10 +158,8 @@ epochs        = 100
 batch_size    = 4
 patience      = 10
 metrics       = ["binary_accuracy", "val_binary_accuracy"]
-
 model_dir     = "./models"
 eval_dir      = "./eval"
-
 image_datapath = "../../../dataset/Hippocampus/train/images/"
 mask_datapath  = "../../../dataset/Hippocampus/train/masks/"
 
@@ -184,6 +183,17 @@ blur      = False
 binarize  = True
 threshold = 128
 </pre>
+As shown above, we have been using <b>bce_iou_loss</b> function.<br>
+<pre>
+[model]
+loss           = "bce_iou_loss"
+</pre>
+Of course, you may use <b>bce_dice_loss</b> function.
+<pre>
+[model]
+loss           = "bce_dice_loss"
+</pre>
+<br>
 
 <h3>
 3.1 Training
