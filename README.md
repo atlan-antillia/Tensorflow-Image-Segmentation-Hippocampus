@@ -133,7 +133,7 @@ by using <a href="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/train_ev
 train_eval_infer.config.</a>
 <pre>
 ; train_eval_infer.config
-; 2024/01/26 (C) antillia.com
+; 2024/02/22 (C) antillia.com
 
 [model]
 model          = "TensorflowUNet"
@@ -172,6 +172,12 @@ mask_datapath  = "../../../dataset/Hippocampus/valid/masks/"
 images_dir    = "../../../dataset/Hippocampus/test/images/"
 output_dir    = "./test_output"
 merged_dir    = "./test_output_merged"
+
+[segmentation]
+colorize      = True
+black         = "black"
+white         = "green"
+blursize      = (5,5)
 
 [mask]
 blur      = False
