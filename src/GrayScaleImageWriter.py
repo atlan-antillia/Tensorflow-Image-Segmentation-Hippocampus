@@ -17,18 +17,22 @@
 
 # 2023/05/05 to-arai
 # 2023/05/24 to-arai
+# 2024/02/22 Added self.colorize
 
 import os
 import cv2
 import numpy as np
 import traceback
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 class GrayScaleImageWriter:
 
-  def __init__(self, image_format=".jpg"):
+  def __init__(self, image_format=".jpg", colorize=False, black="black", white="green"):
     self.image_format = image_format
+    self.colorize     = colorize
+    self.black   = black
+    self.white   = white
 
   def save(self, data, output_dir, name, factor=255.0):
     h = data.shape[0]
@@ -64,11 +68,13 @@ class GrayScaleImageWriter:
           z = z[0]
         v = int(z * factor)
         image.putpixel((i,j), v)
-
+    #print("{} {} {}".format(output_dir, name, self.image_format))
     image_filepath = os.path.join(output_dir, name + self.image_format)
  
     print("== resized to {}".format(resized))
     image = image.resize(resized)
+    if self.colorize:
+       image = ImageOps.colorize(image, black=self.black, white=self.white)
     # image.putalpha(alpha=0)
     image.save(image_filepath)
     image = image.convert("RGB")

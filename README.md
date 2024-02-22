@@ -1,4 +1,4 @@
-<h2>Tensorflow-Image-Segmentation-Hippocampus (Updated: 2024/02/21)</h2>
+<h2>Tensorflow-Image-Segmentation-Hippocampus (Updated: 2024/02/22)</h2>
 
 This is an experimental Image Segmentation project for Hippocampus based on
 the <a href="https://github.com/sarah-antillia/Tensorflow-Image-Segmentation-API">Tensorflow-Image-Segmentation-API</a>.
@@ -11,6 +11,11 @@ Hippocampus-ImageMask-Dataset.zip</a> (Updated:2024/02/21).
 <li>2024/02/21: Modified to use the latest dataset (rotated 90 degrees counterclockwise)
 <a href="https://drive.google.com/file/d/1FAgeAlwvzCscZVvAovqpsTQdum90_7y-/view?usp=sharing">
 Hippocampus-ImageMask-Dataset.zip</a> (Updated:2024/02/21).
+</li>
+
+<li>2024/02/22: Added [segmentation] section to 
+<a href="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/train_eval_infer.config">train_eval_infer.config</a> 
+to be able colorize inferred mask region.
 </li>
 <br>
 <img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/asset/sample_images.png" width="720" height="auto">
@@ -225,10 +230,10 @@ Sample test mask<br>
 
 <br>
 Inferred test masks<br>
-<img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/asset/inferred_test_mask.png" width="1024" height="auto"><br>
+<img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/asset/inferred_test_mask_green.png" width="1024" height="auto"><br>
 <br>
 Merged test images and inferred masks<br> 
-<img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/asset/merged_test_output.png" width="1024" height="auto"><br> 
+<img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/asset/merged_test_output_green.png" width="1024" height="auto"><br> 
 
 Enlarged samples<br>
 <table>
