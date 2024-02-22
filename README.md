@@ -15,7 +15,7 @@ Hippocampus-ImageMask-Dataset.zip</a> (Updated:2024/02/21).
 
 <li>2024/02/22: Added [segmentation] section to 
 <a href="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/train_eval_infer.config">train_eval_infer.config</a> 
-to be able to colorize inferred mask region.
+to be able to colorize the inferred mask regions.
 </li>
 <br>
 <img src="./projects/TensorflowSlightlyFlexibleUNet/Hippocampus/asset/sample_images.png" width="720" height="auto">
